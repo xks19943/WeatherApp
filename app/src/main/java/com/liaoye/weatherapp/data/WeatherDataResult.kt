@@ -13,6 +13,7 @@ data class WeatherResult(val data: WeatherData)
 
 data class WeatherData(
     val realtime: RealTime,
+    val life:Life,
     val weather: List<WeatherInfo>,
     val f3h: F3H,
     val pm25: PM25,
@@ -57,8 +58,9 @@ data class WeatherInfo(
 )
 
 data class WeatherDetail(
-    val day: List<String>,
-    val night: List<String>
+        val dawn: List<String>?,
+        val day: List<String>?,
+        val night: List<String>?
 )
 
 data class F3H(
@@ -91,4 +93,18 @@ data class PM25Detail(
         val level: Int,
         val quality: String,
         val des: String
+)
+
+data class Life(
+        val date: String,
+        val info: LifeInfo
+)
+
+data class LifeInfo(
+        val chuanyi: List<String>,
+        val ganmao: List<String>,
+        val kongtiao: List<String>,
+        val xiche: List<String>,
+        val yundong: List<String>,
+        val ziwaixian: List<String>
 )
