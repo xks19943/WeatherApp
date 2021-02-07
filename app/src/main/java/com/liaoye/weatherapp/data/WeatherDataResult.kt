@@ -4,36 +4,41 @@ package com.liaoye.weatherapp.data
  * Created by xiaoming on 2017/8/23.
  */
 data class WeatherDataResult(
-        val reason: String,
-        val result: WeatherResult,
-        val error_code: Int
+    val reason: String,
+    val result: WeatherResult,
+    val error_code: Int
 )
 
-data class WeatherResult(val data: WeatherData)
-
-data class WeatherData(
+data class WeatherResult(
     val realtime: RealTime,
-    val life:Life,
-    val weather: List<WeatherInfo>,
-    val f3h: F3H,
-    val pm25: PM25,
-    val jingqu: String,
-    val jingqutq: String,
-    val date: String,
-    val isForeign: String
+    val city: String,
+    val future: List<Future>
 )
+
 
 data class RealTime(
-    val city_code: String,
-    val city_name: String,
-    val date: String,
-    val time: String,
-    val week: Int,
-    val moon: String,
-    val dataUptime: String,
-    val weather: Weather,
-    val wind: Wind
+    val temperature: String,
+    val humidity: String,
+    val info: String,
+    val wid: String,
+    val direct: String,
+    val power: String,
+    val aqi: String
 )
+
+data class Future(
+    val date: String,
+    val temperature: String,
+    val weather: String,
+    val wid: Wid,
+    val direct: String
+)
+
+data class Wid(
+    val day: String,
+    val night: String
+)
+/*
 
 data class Weather(
     val temperature: String,
@@ -108,3 +113,5 @@ data class LifeInfo(
         val yundong: List<String>,
         val ziwaixian: List<String>
 )
+*/
+

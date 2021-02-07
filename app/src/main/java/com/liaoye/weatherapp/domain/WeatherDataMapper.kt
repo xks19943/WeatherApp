@@ -2,8 +2,8 @@ package com.liaoye.weatherapp.domain
 
 
 import android.util.Log
+import com.liaoye.weatherapp.data.Future
 import com.liaoye.weatherapp.data.WeatherDataResult
-import com.liaoye.weatherapp.data.WeatherInfo
 
 
 /**
@@ -11,16 +11,16 @@ import com.liaoye.weatherapp.data.WeatherInfo
  */
 
 class WeatherDataMapper {
-    fun convertFromDataModel(weatherDataResult: WeatherDataResult): WeahterList{
-        return WeahterList(convertForecastListToDomain(weatherDataResult.result.data.weather))
+    fun convertFromDataModel(weatherDataResult: WeatherDataResult): WeatherList {
+        return WeatherList(convertForecastListToDomain(weatherDataResult.result.future))
     }
 
-    private fun convertForecastListToDomain(list: List<WeatherInfo>): List<Weather> {
+    private fun convertForecastListToDomain(list: List<Future>): List<Weather> {
         return list.map { convertForecastItemToDomain(it) }
     }
 
-    private fun convertForecastItemToDomain(weatherInfo: WeatherInfo): Weather{
-        Log.d(javaClass.simpleName, weatherInfo.date)
-        return Weather(weatherInfo.date,weatherInfo.info,weatherInfo.week,weatherInfo.nongli)
+    private fun convertForecastItemToDomain(future: Future): Weather {
+        Log.d(javaClass.simpleName, future.date)
+        return Weather(future.date, future.temperature, future.weather, future.direct)
     }
 }

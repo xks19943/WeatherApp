@@ -4,6 +4,7 @@
     <dimen name="primary">16sp</dimen>
     <dimen name="normal">14sp</dimen>
     <dimen name="small">12sp</dimen>
+    <dimen name="width_5">5dp</dimen>
     <dimen name="width_8">8dp</dimen>
     <dimen name="width_16">16dp</dimen>
     <dimen name="line_1">1dp</dimen>

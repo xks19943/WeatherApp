@@ -11,8 +11,8 @@ import java.net.URL
 class WeatherRequest(val cityName: String){
     companion object{
         private val key= "8ff5fde1ef5b35438e8716e27ffc63b8"
-        private val URL = "http://op.juhe.cn/onebox/weather/query?key=$key"
-        private val COMPLETE_URL = "$URL&cityname="
+        private val URL = "http://apis.juhe.cn/simpleWeather/query?key=$key"
+        private val COMPLETE_URL = "$URL&city="
     }
 
     fun execute(): WeatherDataResult{

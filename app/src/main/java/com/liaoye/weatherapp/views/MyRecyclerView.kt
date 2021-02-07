@@ -2,13 +2,13 @@ package com.liaoye.weatherapp.views
 
 import android.content.Context
 import android.graphics.Canvas
-import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
+import androidx.recyclerview.widget.RecyclerView
 
 /**ScrollView嵌套RecyclerView时候重新测量ziview的高度
  * Created by xiaoming on 2017/8/30.
  */
-class MyRecyclerView(context: Context?, attrs: AttributeSet?) : RecyclerView(context, attrs) {
+class MyRecyclerView(context: Context?, attrs: AttributeSet?) : RecyclerView(context!!, attrs) {
 
     override fun onMeasure(widthSpec: Int, heightSpec: Int) {
         //测量参数是最大值右移2位
